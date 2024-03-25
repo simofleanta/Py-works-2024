@@ -1,0 +1,17 @@
+import psycopg2
+from sqlalchemy import create_engine
+from sqlalchemy import text
+import pandas.io.sql as sqlio
+
+
+alchemyEngine = create_engine('postgresql+psycopg2://{}:{}@db-server-name/db-name'.format("username", "pass"))
+dbConn = alchemyEngine.connect()
+
+
+sql_script = text("""select * from database d
+                  limit 10""" )
+
+df = pd.read_sql(sql_script, dbConn)
+print(df)
+
+dbConn.close
