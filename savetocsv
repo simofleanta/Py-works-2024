@@ -1,0 +1,2 @@
+c=df.to_csv
+print(c)
