@@ -21,3 +21,7 @@ df.rename(columns={
 
 # Save the modified DataFrame back to a CSV file
 df.to_csv(r'C:\sus_reports\Py\welt_modified.csv', index=False)
+
+# Save the modified DataFrame back to the same CSV file
+df.to_csv(r'C:\sus_reports\Py\welt.csv', index=False)
+print(df.columns)
